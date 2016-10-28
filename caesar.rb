@@ -19,7 +19,7 @@ def cipher (sentence, shift_value)
 			letters[index] = letter
 			
 			letters[index] = letters[index] - shift_value
-			if letters[index] <= letter_A
+			if letters[index] < letter_A
 				val = letter_A - letters[index]
 				letters[index] = letter_Z - val
 			end
@@ -36,4 +36,9 @@ def cipher (sentence, shift_value)
 	
 end
 
-cipher("D gjqy mpvt!", 20)
+#prompt user for a sentence
+print "Please, enter a sentence to encrypt: "
+sentence = gets.chomp
+print "Please, enter a shift value (0-10): "
+shift_value = gets.chomp.to_i
+cipher(sentence,shift_value)
